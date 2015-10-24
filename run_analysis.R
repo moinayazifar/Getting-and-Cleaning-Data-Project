@@ -20,22 +20,34 @@ if (!require("reshape2")) {
 require("reshape2")
 require("data.table")
 
+filename <- "getdata-projectfiles-UCI HAR Dataset.zip"
+
+## Download the dataset
+if (!file.exists(filename)){
+  fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  download.file(fileURL, filename)
+}  
+
+## unzip the dataset
+if (!file.exists("UCI HAR Dataset")) { 
+  unzip(filename) 
+}
 
 # Read activity labels into memory
-activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
+activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")[,2]
 
 # Read data column names into memory
-features <- read.table("./UCI HAR Dataset/features.txt")[,2]
+features <- read.table("UCI HAR Dataset/features.txt")[,2]
 
 # Extract only the measurements on the mean and standard deviation for each measurement.
 extract_features <- grepl("mean|std", features)
 
 # Read x_test and y_test tables
-X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
+X_test <- read.table("UCI HAR Dataset/test/X_test.txt")
+y_test <- read.table("UCI HAR Dataset/test/y_test.txt")
 
 # Read x_test and subject_test tables
-subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
 names(X_test) = features
 
 # Get the mean and standard deviation for each measurement.
@@ -51,11 +63,11 @@ names(subject_test) = "subject"
 test_data <- cbind(as.data.table(subject_test), y_test, X_test)
 
 # Read x_train & y_train into memory
-X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
-y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+X_train <- read.table("UCI HAR Dataset/train/X_train.txt")
+y_train <- read.table("UCI HAR Dataset/train/y_train.txt")
 
 # Read subject_train into memory
-subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
+subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
 names(X_train) = features
 
 # Get the mean and standard deviation for each measurement.
