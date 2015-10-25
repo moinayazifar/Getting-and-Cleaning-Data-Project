@@ -5,6 +5,12 @@ The goal of this project is to merge, label and extract multiple data sets in or
 
 We have used Human Activity Recognition Using Smart phones Data Set provided by UCI Center for Machine Learning and Intelligent Systems. The dataset and its description can be found at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
  
+## Prject Contents 
+The project includes the following files:
+1- 'README.md' : Explains how all of the scripts work and how they are connected
+2- 'CodeBook.md' : Describes the variables, the data, and any transformations or work that is performed to clean up the data.
+3- 'run_analysis.R' : Main Script
+4- 'tiny_dataset.txt' : Results
 
 ## Project Description
 
