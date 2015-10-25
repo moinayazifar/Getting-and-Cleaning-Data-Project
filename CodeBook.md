@@ -1,11 +1,7 @@
 
 # Code Book
 
-This code book summarizes the resulting data fields in `tidy.txt`.
-
-## References
-OData Set Information: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-The Original Dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+This code book describes the variables, the data, and any transformations or work that you performed to clean up the data.
 
 # Dataset File Description:
 
@@ -23,8 +19,17 @@ The Original Dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfil
  
 ## Identifiers
 
-* `subject` - The ID of the test subject
-* `activity` - The type of activity performed when the corresponding measurements were taken
+* `Subject` - Test subject's ID
+* `Activity_Label` - Activity type when the measurements were taken
+
+## Activity Labels
+
+* `WALKING` (value `1`): subject was walking during the test
+* `WALKING_UPSTAIRS` (value `2`): subject was walking up a staircase during the test
+* `WALKING_DOWNSTAIRS` (value `3`): subject was walking down a staircase during the test
+* `SITTING` (value `4`): subject was sitting during the test
+* `STANDING` (value `5`): subject was standing during the test
+* `LAYING` (value `6`): subject was laying down during the test
 
 ## Measurements
 
@@ -108,11 +113,8 @@ The Original Dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfil
 * `fBodyBodyGyroJerkMagStd`
 * `fBodyBodyGyroJerkMagMeanFreq`
 
-## Activity Labels
 
-* `WALKING` (value `1`): subject was walking during the test
-* `WALKING_UPSTAIRS` (value `2`): subject was walking up a staircase during the test
-* `WALKING_DOWNSTAIRS` (value `3`): subject was walking down a staircase during the test
-* `SITTING` (value `4`): subject was sitting during the test
-* `STANDING` (value `5`): subject was standing during the test
-* `LAYING` (value `6`): subject was laying down during the test
+## References
+OData Set Information: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+The Original Dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
